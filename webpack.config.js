@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: path.resolve(__dirname, "./src/app.tsx"),
+  entry: path.resolve(__dirname, "./src/main.tsx"),
   devtool: "inline-source-map",
   devServer: {
     writeToDisk: true,
@@ -23,6 +23,7 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
+    
   },
   output: {
     filename: "main.[contenthash].js",
@@ -31,9 +32,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html")
-      // templateParameters:{
-      //     entry: path.resolve(__dirname, 'index.html')
-      // },
     })
   ]
 };

@@ -1,9 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "production",
-  entry: path.resolve(__dirname, "./src/app.tsx"),
+  entry: path.resolve(__dirname, "./src/main.tsx"),
   devtool: "inline-source-map",
   devServer: {
     writeToDisk: true,
@@ -31,6 +32,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html")
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ]
 };
