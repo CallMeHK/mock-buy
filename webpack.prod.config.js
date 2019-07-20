@@ -1,16 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "production",
   entry: path.resolve(__dirname, "./src/main.tsx"),
-  devtool: "inline-source-map",
+  devtool: "source-map",
   devServer: {
     writeToDisk: true,
-    contentBase: path.join(__dirname, "../dist-server/app")
+    contentBase: path.join(__dirname, "../dist /app")
   },
-  watch: true,
   module: {
     rules: [
       {

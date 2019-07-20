@@ -1,8 +1,8 @@
 import { h, render } from "preact";
 
 import App from "./App";
-import {ProviderComponent} from "./context/configureContext";
-
+import { ProviderComponent } from "./context/configureContext";
+require("preact/debug");
 
 render(
   <ProviderComponent>

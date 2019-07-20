@@ -7,7 +7,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     writeToDisk: true,
-    contentBase: path.join(__dirname, "../dist-server/app")
+    contentBase: path.join(__dirname, "../dist/app")
   },
   watch: true,
   module: {
@@ -22,8 +22,11 @@ module.exports = {
     ]
   },
   resolve: {
+    alias: {
+      react: "preact/compat",
+      "react-dom": "preact/compat"
+    },
     extensions: [".tsx", ".ts", ".js"]
-    
   },
   output: {
     filename: "main.[contenthash].js",
