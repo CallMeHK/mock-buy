@@ -8,17 +8,8 @@ export interface IAction {
 // set up reducer for action types
 let reducer = (state: IStore, action: IAction): IStore => {
   switch (action.type) {
-    case "set-count":
-      return { ...state, count: action.payload };
-    case "set-word":
-      return { ...state, ...action.payload };
-    case "set-thing-good":
-      return { ...state, thing: { ...state.thing, good: action.payload } };
-    case "set-thing-subreddits":
-      return {
-        ...state,
-        thing: { ...state.thing, subreddits: action.payload }
-      };
+    case "set-account-details":
+      return { ...state, accountDetails: {...state.accountDetails, ...action.payload} };
     default:
       return state;
   }
